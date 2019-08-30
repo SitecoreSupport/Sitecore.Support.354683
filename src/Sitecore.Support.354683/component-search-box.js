@@ -169,8 +169,6 @@ XA.component.search.box = (function ($, document) {
             var suggestionText = text != "" ? text : data.html,
                 link;
 
-            suggestionText = suggestionText.replace(/\.+$/, "");
-
             switch (suggestionsMode) {
                 case "ShowPredictions":
                 case "ShowSearchResultsAsPredictions": {
