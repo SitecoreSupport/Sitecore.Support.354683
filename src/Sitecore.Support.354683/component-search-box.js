@@ -237,8 +237,8 @@ XA.component.search.box = (function ($, document) {
 
             this.closeDropdown();
 
+            this.updateQueryModel(query);
             if (resultPage === "") {
-                this.updateQueryModel(query);
                 this.$el.find(".search-box-input.tt-input").blur().val(query);
             } else {
                 if (targetSignature !== "") {
