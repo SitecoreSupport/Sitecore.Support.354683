@@ -169,9 +169,17 @@ XA.component.search.box = (function ($, document) {
     suggestionSelected: function (event, data) {
       event.preventDefault();
 
-      var suggestionsMode = this.model.get("dataProperties").suggestionsMode,
-        text = $(data.html).text(),
-        suggestionText = text != "" ? text : data.html,
+      var suggestionsMode = this.model.get("dataProperties").suggestionsMode;
+      var text;
+
+      try {
+        text = $(data.html).text();
+      }
+      catch (error) {
+        text = "";
+      }
+
+      var suggestionText = text != "" ? text : data.html,
         link;
 
       switch (suggestionsMode) {
